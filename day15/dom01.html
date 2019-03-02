@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>dom01.html</title>
+		<script type="text/javascript">
+			function doClick() {
+				var h1 = document.getElementById("h1");
+				h1.innerHTML = "<img src='../image/HD_2560x1600_006.jpg'>" + "赶进麻溜儿的敲代码去!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+				alert("我~你大爷的,不敲代码哪来钱娶媳妇儿");
+			}
+
+			function doClick2() {
+				var imgs = document.getElementsByTagName("img");
+				for (i = 0; i < imgs.length; i++) {
+					var img = imgs[i];
+					var src = img.src;
+					if (src.indexOf("HD_2560x1600_004.jpg") != -1) {
+						img.src = "../image/HD_2560x1600_007.jpg";
+					} else {
+						img.src = "../image/HD_2560x1600_004.jpg";
+					}
+				}
+			}
+
+			function doClick3() {
+				var imgs = document.getElementsByTagName("img");
+				for (i = 0; i < imgs.length; i++) {
+					var img = imgs[i];
+					img.style.marginRight = "15px";
+					img.style.border = "1px solid gray";
+					img.style.padding = "4px";
+				}
+			}
+
+			function doFocus() {
+				var input = document.getElementById("input");
+				if (input == "value") {
+					input.value = "";
+				}
+			}
+
+			function doBlur() {
+				var input = document.getElementById("input");
+				if (input != "value") {
+					input.value = value;
+				}
+			}
+		</script>
+		<style type="text/css">
+			img {
+				width: 300px;
+				height: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 id="h1">问:如何才能学好Android?</h1>
+		<input type="button" value="点我看答案" onclick="doClick()">
+		<input type="button" value="点我换图片" onclick="doClick2()">
+		<input type="button" value="点我改样式" onclick="doClick3()"> 请输入账号:
+		<input type="text" value="请输入账号" onfocus="doFocus()" id="input" onblur="doBlur()">
+		<br />
+		<br />
+		<img alt="" src="../image/HD_2560x1600_004.jpg">
+		<img alt="" src="../image/HD_2560x1600_004.jpg">
+		<img alt="" src="../image/HD_2560x1600_004.jpg">
+		<img alt="" src="../image/HD_2560x1600_004.jpg">
+	</body>
+
+</html>

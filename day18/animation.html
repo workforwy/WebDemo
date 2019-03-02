@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>animation.html</title>
+		<style type="text/css">
+			@-webkit-keyframes anim1 {
+				from {
+					background: #FF69B4;
+				}
+				to {
+					background: #019236;
+				}
+			}
+			
+			@-webkit-keyframes anim2 {
+				0% {
+					background: red;
+				}
+				25% {
+					background: yellow;
+				}
+				50% {
+					background: blue;
+				}
+				100% {
+					background: green;
+				}
+			}
+			
+			@-webkit-keyframes anim3 {
+				0% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+				25% {
+					background: yellow;
+					left: 200px;
+					top: 0px;
+				}
+				50% {
+					background: blue;
+					left: 200px;
+					top: 200px;
+				}
+				75% {
+					background: red;
+					left: 0;
+					top: 200px;
+				}
+				100% {
+					background: green;
+					left: 0px;
+					top: 0px;
+				}
+			}
+			
+			@-webkit-keyframes anim4 {
+				0% {
+					background: lightseagreen;
+				}
+				25% {
+					transform: rotate(30deg);
+					-webkit-transform: rotate(30deg);
+					background: #FF69B4;
+					left: 0px;
+					top: 0px;
+				}
+				50% {
+					transform: rotate(0deg);
+					background: cornflowerblue;
+					left: 700px;
+					top: 0px;
+				}
+				75% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+					background: cornflowerblue;
+					left: 700px;
+					top: 0px;
+				}
+				100% {
+					transform: rotate(-360deg);
+					background: lightseagreen;
+					left: 0px;
+					top: 0px;
+				}
+			}
+			
+			.d1 {
+				width: 150px;
+				height: 150px;
+				background: #FF6984;
+				position: relative;
+			}
+			
+			.d1:hover {
+				animation: anim3 1s linear 1s infinite;
+				-webkit-animation: anim3 1s linear 1s infinite;
+			}
+			
+			.d2 {
+				position: relative;
+				width: 100px;
+				height: 50px;
+				background: #FF4500;
+				border-radius: 10px;
+				color: white;
+				text-align: center;
+				line-height: 50px;
+				font-weight: bolder;
+				-webkit-animation-name: anim4;
+				-webkit-animation-duration: 5s;
+				-webkit-animation-timing-function: linear;
+				-webkit-animation-delay: 1s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="d1"></div>
+		<div class="d2">css动画</div>
+	</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>javascript</title>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			function $(id) {
+				return document.getElementById(id);
+			}
+
+			function load() { //页面加载完成后显示
+				$("d1").addEventListener('click', function() {
+					alert("测试成功!!!");
+				});
+
+				$("d2")
+					.addEventListener(
+						'click',
+						function() {
+							var p = new person();
+							p.name = "李四";
+							console.log("p:" + p.name + "," + p.age + "," +
+								p.married ? "已婚" : "未婚");
+							p.eat("肉");
+						});
+
+				$("d3").addEventListener('click', function() {
+					var obj = new Object();
+					obj.name = "石头";
+					obj.eat = function(food) {
+						alert(this.name + "正在吃" + food);
+					};
+					obj.eat("石头");
+				});
+
+				$("d4").addEventListener(
+					'click',
+					function() {
+						var obj = {
+							"name": "zs",
+							"age": 30,
+							"married": true,
+							"aihao": ["吃", "喝", "玩", "乐"],
+							"school": {
+								"name": "tarena",
+								"loc": "beijing"
+							},
+							"eat": function(food) {
+								alert(this.name + "正在吃" + food);
+							},
+							"drink": function(food) {
+								alert(this.name + "正在喝" + food);
+							}
+						};
+						console.log(obj.name + "," + obj.married + "," +
+							obj.aihao[1] + "," + obj.school.name);
+						obj.eat("鱼香肉丝");
+						obj.drink("百事可乐");
+					});
+
+				$("d5").addEventListener('click', function() {
+					var animal = new Animal();
+					console.log("nickname:" + animal.nickname);
+					//animal.eat("好吃的");
+					var dog = new Dog();
+					console.log("nickname:" + dog.nickname);
+					dog.eat("骨头");
+				});
+			}
+
+			//声明类型
+			function Animal() {}
+			Animal.prototype.nickname = "小动物";
+			Animal.prototype.eat = function(food) {
+				alert(this.nickname + "正在吃" + food);
+			};
+			//声明子类 
+			function Dog() {}
+			//子类继承父类    狗的原型是动物  
+			Dog.prototype = new Animal();
+			Dog.prototype.nickname = "大黄";
+			//覆盖父类方法 
+			Dog.prototype.eat = function(food) {
+				alert(this.nickname + "正在啃:" + food);
+			};
+
+			function person() {
+				this.name = "zhangsan";
+				this.age = "19";
+				this.married = true;
+				this.eat = function(food) {
+					alert(this.age + "岁的" + this.name + "正在吃" + food + "呢");
+				};
+			}
+		</script>
+	</head>
+
+	<body onload="load()">
+		<a href="javascript:;" id="d1">测试第二种事件绑定的方式 非常丰富</a>
+		<br>
+		<a href="javascript:;" id="d2">测试javascript的面向对象1</a>
+		<br>
+		<a href="javascript:;" id="d3">测试javascript的面向对象2</a>
+		<br>
+		<a href="javascript:;" id="d4">测试javascript的面向对象3</a>
+		<br>
+		<a href="javascript:;" id="d5">测试javascript的面向对象的继承</a>
+		<br>
+	</body>
+
+</html>

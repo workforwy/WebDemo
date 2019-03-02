@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>js与app端测试互调</title>
+	</head>
+
+	<body>
+		<h1>附一段传值事件</h1>
+		<button value="Call ObjC func with JSON and ObjC call js func to pass args" onclick="jsToAPP()">js与app端测试互调</button>
+		<br />
+		<p>
+			这边数据是后台的事,后台只要在onclick事件后面添加 JSModel.payResult({'payCode': 100, 'payInfo': 'faile', 'from': 'Xcode'})方法 并且传数据, Xcode就可以获取数据了。
+		</p>
+	</body>
+
+	<script type="text/javascript">
+		function jsToAPP() {
+			JSModel.payResult({
+				'payCode': 100,
+				'payInfo': 'faile',
+				'from': 'Xcode'
+			})
+		}
+	</script>
+
+</html>

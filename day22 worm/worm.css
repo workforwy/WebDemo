@@ -1,0 +1,21 @@
+#mCanvas {
+    border: 1px solid black;
+    float: left;
+    margin-right: 20px;
+}
+
+table tr td div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    float: left;
+    cursor: pointer;
+}
+
+table tr td div:hover {
+    background: #abcdef;
+}

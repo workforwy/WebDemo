@@ -1,0 +1,45 @@
+y;
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function doClick() {
+				var ary = new Array();
+				ary.push(200);
+				ary.push(22);
+				ary.unshift(18);
+				ary.unshift(101);
+				ary.pop();
+				ary.push(30);
+				console.log("ary" + ary);
+			}
+
+			function doClick2() {
+				var r = add(100, 200);
+				alert(r);
+			}
+
+			function add() {
+				if (arguments.length == 2) {
+					return arguments[0] - arguments[1];
+				}
+				if (arguments.length == 3) {
+					return arguments[1] + argumengs[2] + arguments[0];
+				}
+			}
+
+			function add(n1, n2) {
+				return n1 + n2;
+			}
+		</script>
+	</head>
+
+	<body>
+		<a href="javascript:;" onclick="doClick2()">测试js中的函数的调用</a>
+		<hr>
+		<a href="javascript:;" onclick="doClick()">测试数组的API</a>
+	</body>
+
+</html>

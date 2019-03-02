@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+/*css的注释*/
+/*通配符选择器 选出所有标签*/
+* {
+	color: blue;
+	font-style: italic;
+	font-size: larger;
+}
+
+/*标签选择器*/
+p {
+	color: green
+}
+
+/*id选择器*/
+#li2 {
+	border: 2px solid red;
+}
+/*class选择器*/
+.la {
+	background: green;
+}
+
+.lb {
+	background: red;
+}
+
+.h160 {
+	height: 80px;
+}

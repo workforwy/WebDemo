@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>登陆界面</title>
+		<script type="text/javascript">
+			function checkname() {
+				var name = document.getElementById("name");
+				var val = name.value;
+				var span = document.getElementById("name_span");
+				//if (val.length<=10&&val.length> = 6) {
+				var pattern = /^\w{6,10}$/;
+				if (pattern.test(val)) {
+					span.innerHTML = "格式正确";
+					span.style.color = "green";
+					return true;
+				} else {
+					span.innerHTML = "格式错误(需要输入6-10位字符)";
+					span.style.color = "red";
+					return false;
+				}
+			}
+
+			function checkpwd() {
+				var password = document.getElementById("password");
+				var val = password.value;
+				var span = document.getElementById("pwd_span");
+				//if (val.length<=10&&val.length> = 6) {
+				var pattern = /^\w{6}$/;
+				if (pattern.test(val)) {
+					span.innerHTML = "格式正确";
+					span.style.color = "green";
+					return true;
+				} else {
+					span.innerHTML = "格式错误(需要输入6位数字)";
+					span.style.color = "red";
+					return false;
+				}
+			}
+
+			function checkrepwd() {
+				var password = document.getElementById("password");
+				var val = password.value;
+				var password1 = document.getElementById("repassword");
+				var val1 = password1.value;
+				var span = document.getElementById("repwd_span");
+				if (val = val1) {
+					span.innerHTML = "密码一致";
+					span.style.color = "green";
+					return true;
+				} else {
+					span.innerHTML = "密码不一致.请重新输入";
+					span.style.color = "red";
+					return false;
+				}
+			}
+
+			function checkform() {
+				return checkname() && checkpwd() && checkrepwd();
+			}
+		</script>
+	</head>
+
+	<body>
+		<h3>登录</h3>
+		<form action="login" onsubmit="return checkform()">
+			账号:
+			<input id="name" type="text" onblur="checkname()">
+			<span id="name_span"></span>
+			<br />
+			<br /> 密码:
+			<input id="password" type="password" onblur="checkpwd()">
+			<span id="pwd_span"></span>
+			<br />
+			<br /> 重复密码:
+			<input id="repassword" type="password" onblur="checkrepwd()">
+			<span id="repwd_span"></span>
+			<br />
+			<br />
+			<input type="submit" value="登录">
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".alertneirong").click(function() {
+					alert($(this).html());
+				});
+				for(i = 0; i < 5; i++) {
+					$("body").append("<img src='../image/HD_2560x1600_012.jpg'/>")
+				}
+				$("img").css({
+					"width": "150px",
+					"margin - right": "10px"
+				});
+				$("img").css({
+					"border": "1 px solid black"
+				});
+				$("img").css({
+					"padding": "5 px"
+				});
+			});
+			//给a4绑定监听
+			$(".a4").click(function() {
+				console.log(123);
+				$("img").Attr("src", "../image/HD_2560x1600_004.jpg");
+			});
+		</script>
+	</head>
+
+	<body>
+		<a class="alertneirong" href="javascript:;">点击获得内容</a>
+		<a id="a4" href="javascript:;">替换图片</a>
+	</body>
+
+</html>

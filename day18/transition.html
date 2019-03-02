@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+.a1 {
+	width: 200px;
+	height: 200px;
+	background: url(../image/HD_3200x2000_001.jpg);
+	background-size: cover;
+	border-radius: 20%;
+	transition: all 2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
+	/*transition: all 2s linear 1s;*/
+}
+</style>
+<script src="main.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function load() {
+		$("start").addEventListener('click', function() {
+			$("d1").style.marginLeft = "600px";
+			$("d1").style.borderRadius = "50%";
+		});
+	}
+</script>
+</head>
+
+<body onload="load()">
+	<div class="a1" id="d1"></div>
+	<input type="button" id="start" value="start" />
+</body>
+
+</html>

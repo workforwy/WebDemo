@@ -1,0 +1,74 @@
+body,
+ul,
+header,
+li,
+nav,
+aside,
+img,
+section,
+footer {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	width: 320px;
+	height: 60px;
+	background: lightseagreen;
+	margin: 10px auto;
+}
+
+nav {
+	width: 320px;
+	height: 40px;
+	background: cornflowerblue;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.container {
+	width: 320px;
+	height: 1500px;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.container aside {
+	width: 320px;
+	height: 280px;
+	background: burlywood;
+	float: left;
+	margin-right: 10px;
+}
+
+.container article {
+	width: 320px;
+	height: 600px;
+	background: hotpink;
+	float: left;
+	margin-right: 10px;
+}
+
+.container .section {
+	width: 320px;
+	height: 600px;
+	float: left;
+}
+
+.container .section section {
+	width: 320px;
+	height: 295px;
+	background: wheat;
+	float: left;
+}
+
+#s2 {
+	margin-top: 10px;
+}
+
+footer {
+	width: 320px;
+	height: 60px;
+	background: #222;
+	margin: 0px auto;
+}

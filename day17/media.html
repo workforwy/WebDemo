@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Media.html</title>
+		<style>
+			video {
+				border: 1px solid black;
+			}
+		</style>
+
+		<script src="main.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			//给按钮添加监听 
+			function load() {
+				$("bt1").addEventListener('click', function() {
+					var paused = $("video").paused;
+					if(paused) {
+						$("video").play();
+					} else {
+						$("video").pause();
+					}
+				});
+				$("bt2").addEventListener('click', function() {
+					var video = $("video1");
+					var src = video.currentSrc;
+					var currentTime = video.currentTime;
+					var duration = video.duration;
+					var volume = video.volume;
+					console.log("src" + src);
+					console.log("currentTime" + currentTime);
+					console.log("duration" + duration);
+					console.log("volume" + volume);
+				});
+				$("bt3").addEventListener('click', function() {
+					var current = $("video1").volume;
+					if(current + 0.1 > 1) {
+						$("video1").volume = 1;
+					} else {
+						$("video1").volume = current + 0.1;
+					}
+				});
+				$("bt4").addEventListener('click', function() {
+					var current = $("video1").volume;
+					if(current - 0.1 > 1) {
+						$("video1").volume = 0;
+					} else {
+						$("video1").volume = current - 0.1;
+					}
+				});
+			}
+		</script>
+	</head>
+
+	<body onload="load()">
+		<h3>音频标签</h3>
+		<audio src="DeathNote-L'sTheme.mp3" controls="controls" preload="auto" loop="loop"></audio>
+		<h3>视频标签</h3>
+		<video src="DeathNote-L'sTheme.mp3" controls="controls" autoplay="autoplay" loop="loop" width="800px"></video>
+		<input id="bt1" type="button" value="暂停/播放" />
+		<input id="bt2" type="button" value="访问属性" />
+		<input id="bt3" type="button" value="音量+" />
+		<input id="bt4" type="button" value="音量-" />
+	</body>
+
+</html>

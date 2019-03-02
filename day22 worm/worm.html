@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" type="text/css" href="worm.css"/>
+    <script src="Node.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Worm.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Stage.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //页面加载完毕后 绘制舞台
+        function load() {
+            var mCanvas = document.getElementById("mCanvas");
+            var ctx = mCanvas.getContext('2d');
+            //创建舞台  绘制界面
+            var stage = new Stage();
+            stage.print(ctx);
+            // 绘制一条蛇
+            var worm = stage.worm;
+            //启动定时器 每过一段时间就画一次 走一步  再重新绘制
+            window.setInterval(function () {
+                worm.step();
+                stage.print(ctx);
+            }, 100);
+        }
+
+        function changeDir(dir) {
+            DIR = dir;
+        }
+    </script>
+</head>
+
+<body onload="load()">
+
+<canvas id="mCanvas" width="500" height="500"></canvas>
+
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td></td>
+        <td>
+            <div onclick="changeDir(UP)">上</div>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <div onclick="changeDir(LEFT)">左</div>
+        </td>
+        <td></td>
+        <td>
+            <div onclick="changeDir(RIGHT)">右</div>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <div onclick="changeDir(DOWN)">下</div>
+        </td>
+        <td></td>
+    </tr>
+</table>
+</body>
+
+</html>
